@@ -1,2 +1,4 @@
 .secrets
 secrets/
+.DS_Store
+.vscode/
