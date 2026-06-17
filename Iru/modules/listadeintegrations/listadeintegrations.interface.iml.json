@@ -1,0 +1,27 @@
+[
+	{
+		"name": "integration_id",
+		"type": "text",
+		"label": "Integration ID"
+	},
+	{
+		"name": "name",
+		"type": "text",
+		"label": "Name"
+	},
+	{
+		"name": "server_name",
+		"type": "text",
+		"label": "Server Name"
+	},
+	{
+		"name": "status",
+		"type": "text",
+		"label": "Status"
+	},
+	{
+		"name": "token_expiration",
+		"type": "date",
+		"label": "Token Expiration"
+	}
+]

@@ -1,0 +1,13 @@
+{
+	"url": "/tags",
+	"method": "GET",
+	"qs": {
+		"search": "{{parameters.search}}",
+		"limit": "{{parameters.limit}}"
+	},
+	"response": {
+		"iterate": "{{body}}",
+		"output": "{{item}}",
+		"limit": "{{parameters.limit}}"
+	}
+}

@@ -1,0 +1,8 @@
+[
+	{
+		"name": "deviceId",
+		"type": "text",
+		"label": "Device ID",
+		"required": true
+	}
+]

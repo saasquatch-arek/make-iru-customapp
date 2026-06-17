@@ -1,0 +1,28 @@
+{
+	// Request
+	"url": "{{parameters.apiUrl}}/devices",
+	"qs": {
+		"limit": 1
+	},
+	"headers": {                                          // Additional HTTP headers
+		"Authorization": "Bearer {{parameters.apiKey}}",
+		"Accept": "application/json"
+	},
+
+	// Response handling
+	"response": {
+		"metadata": {                                     // Adds authorized user details to the connection label.
+			"type": "text",
+			"value": "{{parameters.apiUrl}}"
+		},
+		"error": {                                        // Error handling
+			"message": "[{{statusCode}}] {{body.message}}"
+		}
+	},
+
+	"log": {
+		"sanitize": [                                     // Excludes sensitive parameters from logs.
+			"request.headers.authorization"
+		]
+	}
+}

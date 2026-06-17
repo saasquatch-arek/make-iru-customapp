@@ -1,0 +1,20 @@
+[
+	{
+		"name": "deviceId",
+		"type": "text",
+		"label": "Device ID",
+		"required": true
+	},
+	{
+		"name": "limit",
+		"type": "uinteger",
+		"label": "Limit",
+		"default": 10
+	},
+	{
+		"name": "offset",
+		"type": "uinteger",
+		"label": "Offset",
+		"default": 0
+	}
+]

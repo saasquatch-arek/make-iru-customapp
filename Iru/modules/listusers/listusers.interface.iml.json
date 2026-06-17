@@ -1,0 +1,27 @@
+[
+	{
+		"name": "user_id",
+		"type": "text",
+		"label": "User ID"
+	},
+	{
+		"name": "email",
+		"type": "email",
+		"label": "Email"
+	},
+	{
+		"name": "name",
+		"type": "text",
+		"label": "Name"
+	},
+	{
+		"name": "blueprint_id",
+		"type": "text",
+		"label": "Blueprint ID"
+	},
+	{
+		"name": "devices_count",
+		"type": "uinteger",
+		"label": "Devices Count"
+	}
+]

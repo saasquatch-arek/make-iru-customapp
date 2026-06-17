@@ -1,0 +1,37 @@
+[
+	{
+		"name": "id",
+		"type": "text",
+		"label": "Blueprint ID"
+	},
+	{
+		"name": "name",
+		"type": "text",
+		"label": "Name"
+	},
+	{
+		"name": "icon",
+		"type": "text",
+		"label": "Icon"
+	},
+	{
+		"name": "color",
+		"type": "text",
+		"label": "Color"
+	},
+	{
+		"name": "description",
+		"type": "text",
+		"label": "Description"
+	},
+	{
+		"name": "params",
+		"type": "any",
+		"label": "Params"
+	},
+	{
+		"name": "body",
+		"type": "any",
+		"label": "Body"
+	}
+]

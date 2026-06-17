@@ -1,0 +1,182 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": null,
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "Iru Read API Key",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": null
+                }
+            }
+        },
+        "module": {
+            "searchsn": {
+                "label": "List devices",
+                "description": "Lists devices with documented device, blueprint, platform, and user-related filters.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/searchsn/searchsn.communication.iml.json",
+                    "staticParams": "modules/searchsn/searchsn.static-params.iml.json",
+                    "mappableParams": "modules/searchsn/searchsn.mappable-params.iml.json",
+                    "interface": "modules/searchsn/searchsn.interface.iml.json",
+                    "samples": "modules/searchsn/searchsn.samples.iml.json",
+                    "scope": "modules/searchsn/searchsn.scope.iml.json"
+                }
+            },
+            "getdevice": {
+                "label": "Get device",
+                "description": "Fetches a single device by its Iru device ID.",
+                "moduleType": "action",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/getdevice/getdevice.communication.iml.json",
+                    "staticParams": "modules/getdevice/getdevice.static-params.iml.json",
+                    "mappableParams": "modules/getdevice/getdevice.mappable-params.iml.json",
+                    "interface": "modules/getdevice/getdevice.interface.iml.json",
+                    "samples": "modules/getdevice/getdevice.samples.iml.json",
+                    "scope": "modules/getdevice/getdevice.scope.iml.json"
+                }
+            },
+            "listblueprints": {
+                "label": "List blueprints",
+                "description": "Lists all blueprints with pagination.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/listblueprints/listblueprints.communication.iml.json",
+                    "staticParams": "modules/listblueprints/listblueprints.static-params.iml.json",
+                    "mappableParams": "modules/listblueprints/listblueprints.mappable-params.iml.json",
+                    "interface": "modules/listblueprints/listblueprints.interface.iml.json",
+                    "samples": "modules/listblueprints/listblueprints.samples.iml.json",
+                    "scope": "modules/listblueprints/listblueprints.scope.iml.json"
+                }
+            },
+            "getblueprint": {
+                "label": "Get blueprint",
+                "description": "Fetches a single blueprint by blueprint ID.",
+                "moduleType": "action",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/getblueprint/getblueprint.communication.iml.json",
+                    "staticParams": "modules/getblueprint/getblueprint.static-params.iml.json",
+                    "mappableParams": "modules/getblueprint/getblueprint.mappable-params.iml.json",
+                    "interface": "modules/getblueprint/getblueprint.interface.iml.json",
+                    "samples": "modules/getblueprint/getblueprint.samples.iml.json",
+                    "scope": "modules/getblueprint/getblueprint.scope.iml.json"
+                }
+            },
+            "listdevicelibraryitems": {
+                "label": "List device library items",
+                "description": "Lists library items and statuses for a specific device.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/listdevicelibraryitems/listdevicelibraryitems.communication.iml.json",
+                    "staticParams": "modules/listdevicelibraryitems/listdevicelibraryitems.static-params.iml.json",
+                    "mappableParams": "modules/listdevicelibraryitems/listdevicelibraryitems.mappable-params.iml.json",
+                    "interface": "modules/listdevicelibraryitems/listdevicelibraryitems.interface.iml.json",
+                    "samples": "modules/listdevicelibraryitems/listdevicelibraryitems.samples.iml.json",
+                    "scope": "modules/listdevicelibraryitems/listdevicelibraryitems.scope.iml.json"
+                }
+            },
+            "listtags": {
+                "label": "List tags",
+                "description": "Lists tags with optional search filtering.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/listtags/listtags.communication.iml.json",
+                    "staticParams": "modules/listtags/listtags.static-params.iml.json",
+                    "mappableParams": "modules/listtags/listtags.mappable-params.iml.json",
+                    "interface": "modules/listtags/listtags.interface.iml.json",
+                    "samples": "modules/listtags/listtags.samples.iml.json",
+                    "scope": "modules/listtags/listtags.scope.iml.json"
+                }
+            },
+            "makeapicall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/makeapicall/makeapicall.communication.iml.json",
+                    "staticParams": "modules/makeapicall/makeapicall.static-params.iml.json",
+                    "mappableParams": "modules/makeapicall/makeapicall.mappable-params.iml.json",
+                    "interface": "modules/makeapicall/makeapicall.interface.iml.json",
+                    "samples": "modules/makeapicall/makeapicall.samples.iml.json",
+                    "scope": "modules/makeapicall/makeapicall.scope.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {},
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://us1.make.celonis.com/api",
+            "appId": "iru-app-fwosfx",
+            "appVersion": 1,
+            "apikeyFile": "../.secrets/apikey",
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "iru-app-fwosfx"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "searchsn",
+                        "remote": "searchsn"
+                    },
+                    {
+                        "local": "getdevice",
+                        "remote": "getdevice"
+                    },
+                    {
+                        "local": "makeapicall",
+                        "remote": "makeapicall"
+                    },
+                    {
+                        "local": "listblueprints",
+                        "remote": "listblueprints"
+                    },
+                    {
+                        "local": "getblueprint",
+                        "remote": "getblueprint"
+                    },
+                    {
+                        "local": "listdevicelibraryitems",
+                        "remote": "listdevicelibraryitems"
+                    },
+                    {
+                        "local": "listtags",
+                        "remote": "listtags"
+                    }
+                ],
+                "function": [],
+                "rpc": [],
+                "webhook": []
+            }
+        }
+    ]
+}

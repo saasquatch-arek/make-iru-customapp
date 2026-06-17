@@ -1,0 +1,14 @@
+{
+	"device_id": "77883d40-5656-4a24-9d70-49b6e751a923",
+	"id": 1222,
+	"item_id": "4a98cb3d-3b55-46bf-829d-7dd7bd6ed832",
+	"name": "zoom",
+	"status": "PASS",
+	"reported_at": "2021-05-11T19:45:19Z",
+	"type": "custom-app",
+	"last_audit_log": "Executing audit script...\nScript exited with non-zero status.",
+	"log": "Executing audit script...\nScript exited with non-zero status.\nDownloading zoom\nCompleted download in four minutes, fifty seconds.\nInstalling zoom\nCompleted package installation in four seconds.",
+	"body": {
+		"id": 1222
+	}
+}

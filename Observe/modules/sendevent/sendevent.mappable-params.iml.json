@@ -1,0 +1,163 @@
+[
+	{
+		"name": "timestamp",
+		"type": "date",
+		"label": "Timestamp",
+		"required": true,
+		"default": "{{now}}"
+	},
+	{
+		"name": "outcomeType",
+		"type": "select",
+		"label": "Outcome Type",
+		"default": "Error",
+		"dynamic": true,
+		"validate": false,
+		"options": [
+			{
+				"label": "Success",
+				"value": "Success"
+			},
+			{
+				"label": "Warning",
+				"value": "Warning"
+			},
+			{
+				"label": "Error",
+				"value": "Error"
+			},
+			{
+				"label": "Critical",
+				"value": "Critical"
+			}
+		],
+		"required": true
+	},
+	{
+		"name": "severity",
+		"type": "select",
+		"label": "Impact",
+		"default": "high",
+		"dynamic": true,
+		"validate": false,
+		"options": [
+			{
+				"label": "Info",
+				"value": "info"
+			},
+			{
+				"label": "Low",
+				"value": "low"
+			},
+			{
+				"label": "Medium",
+				"value": "medium"
+			},
+			{
+				"label": "High",
+				"value": "high"
+			}
+		],
+		"required": true
+	},
+	{
+		"name": "scenarioName",
+		"type": "text",
+		"label": "Scenario Name"
+	},
+	{
+		"name": "scenarioId",
+		"type": "text",
+		"label": "Scenario ID",
+		"default": "{{scenario.id}}",
+		"help": "Map the Make scenario ID, for example {{scenario.id}}."
+	},
+	{
+		"name": "scenarioUrl",
+		"type": "text",
+		"label": "Scenario URL",
+		"help": "Optional link back to the Make scenario or execution."
+	},
+	{
+		"name": "executionId",
+		"type": "text",
+		"label": "Execution ID",
+		"help": "Map a Make execution ID when available."
+	},
+	{
+		"name": "executionUrl",
+		"type": "text",
+		"label": "Execution URL",
+		"help": "Optional link back to the Make execution."
+	},
+	{
+		"name": "relatedItsmTaskId",
+		"type": "text",
+		"label": "Related ITSM Task ID",
+		"advanced": true,
+		"help": "Optional related ITSM ticket, incident, request, or task identifier, for example INC0012345 or ITSM-123."
+	},
+	{
+		"name": "relatedItsmTaskUrl",
+		"type": "text",
+		"label": "Related ITSM Task URL",
+		"advanced": true,
+		"help": "Optional direct link to the related ITSM task or ticket."
+	},
+	{
+		"name": "creditsConsumed",
+		"type": "number",
+		"label": "Credits Consumed",
+		"advanced": true,
+		"help": "Optional. Map the number of Make credits consumed by this execution when available."
+	},
+	{
+		"name": "dataConsumed",
+		"type": "number",
+		"label": "Data Consumed",
+		"advanced": true,
+		"help": "Optional. Map the amount of data consumed by this execution when available. Use bytes if Make exposes the value in bytes."
+	},
+	{
+		"name": "operationsConsumed",
+		"type": "number",
+		"label": "Operations Consumed",
+		"advanced": true,
+		"help": "Optional. Map the number of operations consumed by this execution when available."
+	},
+	{
+		"name": "executionTime",
+		"type": "text",
+		"label": "Execution Time",
+		"help": "Optional execution duration in HH:MM:SS format, for example 00:01:30. Execution Time Seconds is calculated automatically when the value has three colon-separated parts."
+	},
+	{
+		"name": "systemMessage",
+		"type": "text",
+		"label": "System Message",
+		"advanced": true,
+		"help": "Map an error message or success summary, for example {{error.message}} in an error handler."
+	},
+	{
+		"name": "module",
+		"type": "text",
+		"label": "Module Name",
+		"help": "Map the failing or reporting module name, for example {{error.module}} in an error handler."
+	},
+	{
+		"name": "customPropertiesToSend",
+		"type": "select",
+		"label": "Custom Properties to Send",
+		"multiple": true,
+		"default": [],
+		"options": "rpc://listmakecustompropertycheckboxes",
+		"mappable": false,
+		"help": "Optional. Select Make scenario custom properties to include in the Observe payload. If nothing is selected, no custom properties are sent."
+	},
+	{
+		"name": "details",
+		"type": "any",
+		"label": "Details",
+		"help": "Optional extra structured data to include in the Observe event."
+	}
+]

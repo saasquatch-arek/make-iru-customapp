@@ -1,0 +1,22 @@
+[
+	{
+		"name": "app_name",
+		"type": "text",
+		"label": "App Name"
+	},
+	{
+		"name": "bundle_id",
+		"type": "text",
+		"label": "Bundle ID"
+	},
+	{
+		"name": "version",
+		"type": "text",
+		"label": "Version"
+	},
+	{
+		"name": "status",
+		"type": "text",
+		"label": "Status"
+	}
+]

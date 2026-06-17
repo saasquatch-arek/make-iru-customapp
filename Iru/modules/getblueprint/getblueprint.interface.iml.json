@@ -1,0 +1,52 @@
+[
+	{
+		"name": "id",
+		"type": "text",
+		"label": "Blueprint ID"
+	},
+	{
+		"name": "name",
+		"type": "text",
+		"label": "Name"
+	},
+	{
+		"name": "description",
+		"type": "text",
+		"label": "Description"
+	},
+	{
+		"name": "icon",
+		"type": "text",
+		"label": "Icon"
+	},
+	{
+		"name": "color",
+		"type": "text",
+		"label": "Color"
+	},
+	{
+		"name": "params",
+		"type": "any",
+		"label": "Params"
+	},
+	{
+		"name": "computers_count",
+		"type": "uinteger",
+		"label": "Computers Count"
+	},
+	{
+		"name": "missing_computers_count",
+		"type": "uinteger",
+		"label": "Missing Computers Count"
+	},
+	{
+		"name": "enrollment_code",
+		"type": "any",
+		"label": "Enrollment Code"
+	},
+	{
+		"name": "body",
+		"type": "any",
+		"label": "Body"
+	}
+]

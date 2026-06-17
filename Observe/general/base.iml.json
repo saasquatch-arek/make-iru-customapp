@@ -1,0 +1,22 @@
+{
+	// Default request configuration
+	"baseUrl": "https://{{connection.customerId}}.collect.observeinc.com/v1",
+	"headers": {
+		"Authorization": "Bearer {{connection.datastreamToken}}",
+		"Accept": "application/json"
+	},
+
+	// Default response handling
+	"response": {
+		"error": {
+			"message": "[{{statusCode}}] {{body}}"
+		}
+	},
+
+	"log": {
+		"sanitize": [
+			"request.headers.authorization",
+			"connection.makeApiToken"
+		]
+	}
+}

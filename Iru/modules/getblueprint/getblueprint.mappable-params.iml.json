@@ -1,0 +1,8 @@
+[
+	{
+		"name": "blueprintId",
+		"type": "text",
+		"label": "Blueprint ID",
+		"required": true
+	}
+]

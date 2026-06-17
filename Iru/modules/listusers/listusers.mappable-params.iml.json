@@ -1,0 +1,24 @@
+[
+	{
+		"name": "email",
+		"type": "text",
+		"label": "Email"
+	},
+	{
+		"name": "name",
+		"type": "text",
+		"label": "Name"
+	},
+	{
+		"name": "limit",
+		"type": "uinteger",
+		"label": "Limit",
+		"default": 10
+	},
+	{
+		"name": "offset",
+		"type": "uinteger",
+		"label": "Offset",
+		"default": 0
+	}
+]

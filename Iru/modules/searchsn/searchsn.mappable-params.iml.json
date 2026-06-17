@@ -1,0 +1,80 @@
+[
+	{
+		"name": "assetTag",
+		"type": "text",
+		"label": "Asset Tag"
+	},
+	{
+		"name": "blueprintId",
+		"type": "text",
+		"label": "Blueprint ID"
+	},
+	{
+		"name": "deviceId",
+		"type": "text",
+		"label": "Device ID"
+	},
+	{
+		"name": "deviceIdLookup",
+		"type": "text",
+		"label": "Device ID Lookup",
+		"help": "Use a documented lookup value such as `gt`."
+	},
+	{
+		"name": "deviceName",
+		"type": "text",
+		"label": "Device Name"
+	},
+	{
+		"name": "model",
+		"type": "text",
+		"label": "Model"
+	},
+	{
+		"name": "serialNumber",
+		"type": "text",
+		"label": "Serial Number"
+	},
+	{
+		"name": "platform",
+		"type": "text",
+		"label": "Platform",
+		"help": "Use the platform string expected by Iru, for example `Mac` from the official device list docs."
+	},
+	{
+		"name": "osVersion",
+		"type": "text",
+		"label": "OS Version"
+	},
+	{
+		"name": "user",
+		"type": "text",
+		"label": "User"
+	},
+	{
+		"name": "userEmail",
+		"type": "text",
+		"label": "User Email"
+	},
+	{
+		"name": "userId",
+		"type": "uinteger",
+		"label": "User ID"
+	},
+	{
+		"name": "userName",
+		"type": "text",
+		"label": "User Name"
+	},
+	{
+		"name": "macAddress",
+		"type": "text",
+		"label": "MAC Address"
+	},
+	{
+		"name": "limit",
+		"type": "uinteger",
+		"label": "Limit",
+		"default": 10
+	}
+]

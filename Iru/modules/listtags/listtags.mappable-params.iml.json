@@ -1,0 +1,13 @@
+[
+	{
+		"name": "search",
+		"type": "text",
+		"label": "Search"
+	},
+	{
+		"name": "limit",
+		"type": "uinteger",
+		"label": "Limit",
+		"default": 10
+	}
+]

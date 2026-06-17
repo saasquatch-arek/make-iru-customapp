@@ -1,0 +1,81 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": null,
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "Observe Datastream Token",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": null
+                }
+            }
+        },
+        "module": {
+            "sendevent": {
+                "label": "Send scenario event",
+                "description": "Sends a structured Make scenario outcome event to Observe over the HTTP ingestion endpoint.",
+                "moduleType": "action",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/sendevent/sendevent.communication.iml.json",
+                    "staticParams": "modules/sendevent/sendevent.static-params.iml.json",
+                    "mappableParams": "modules/sendevent/sendevent.mappable-params.iml.json",
+                    "interface": "modules/sendevent/sendevent.interface.iml.json",
+                    "samples": "modules/sendevent/sendevent.samples.iml.json",
+                    "scope": "modules/sendevent/sendevent.scope.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {
+            "listmakecustompropertycheckboxes": {
+                "label": "List Make custom property options",
+                "codeFiles": {
+                    "communication": "rpcs/listmakecustompropertycheckboxes/listmakecustompropertycheckboxes.communication.iml.json",
+                    "params": "rpcs/listmakecustompropertycheckboxes/listmakecustompropertycheckboxes.params.iml.json"
+                }
+            }
+        },
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Observe.inc",
+            "appId": "observerai-xv3lqh",
+            "baseUrl": "https://us1.make.celonis.com/api",
+            "appVersion": 1,
+            "apikeyFile": "../secrets/apikey",
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "observerai-xv3lqh"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "sendevent",
+                        "remote": "sendevent"
+                    }
+                ],
+                "function": [],
+                "rpc": [
+                    {
+                        "local": "listmakecustompropertycheckboxes",
+                        "remote": "listmakecustompropertycheckboxes"
+                    }
+                ],
+                "webhook": []
+            }
+        }
+    ]
+}

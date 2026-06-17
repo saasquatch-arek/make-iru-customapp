@@ -1,0 +1,32 @@
+[
+	{
+		"name": "serial_number",
+		"type": "text",
+		"label": "Serial Number"
+	},
+	{
+		"name": "model",
+		"type": "text",
+		"label": "Model"
+	},
+	{
+		"name": "assigned_blueprint_id",
+		"type": "text",
+		"label": "Assigned Blueprint ID"
+	},
+	{
+		"name": "assigned_blueprint_name",
+		"type": "text",
+		"label": "Assigned Blueprint Name"
+	},
+	{
+		"name": "last_seen",
+		"type": "date",
+		"label": "Last Seen"
+	},
+	{
+		"name": "status",
+		"type": "text",
+		"label": "Status"
+	}
+]

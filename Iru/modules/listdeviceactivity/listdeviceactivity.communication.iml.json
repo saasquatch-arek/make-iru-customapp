@@ -1,0 +1,13 @@
+{
+	"url": "/devices/{{parameters.deviceId}}/activity",
+	"method": "GET",
+	"qs": {
+		"limit": "{{parameters.limit}}",
+		"offset": "{{parameters.offset}}"
+	},
+	"response": {
+		"iterate": "{{body}}",
+		"output": "{{item}}",
+		"limit": "{{parameters.limit}}"
+	}
+}

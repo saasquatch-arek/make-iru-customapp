@@ -1,0 +1,47 @@
+{
+	"url": "/devices/",
+	"method": "GET",
+	"qs": {
+		"asset_tag": "{{parameters.assetTag}}",
+		"blueprint_id": "{{parameters.blueprintId}}",
+		"device_id": "{{parameters.deviceId}}",
+		"device_id_lookup": "{{parameters.deviceIdLookup}}",
+		"device_name": "{{parameters.deviceName}}",
+		"model": "{{parameters.model}}",
+		"serial_number": "{{parameters.serialNumber}}",
+		"platform": "{{parameters.platform}}",
+		"os_version": "{{parameters.osVersion}}",
+		"user": "{{parameters.user}}",
+		"user_email": "{{parameters.userEmail}}",
+		"user_id": "{{parameters.userId}}",
+		"user_name": "{{parameters.userName}}",
+		"mac_address": "{{parameters.macAddress}}",
+		"limit": "{{parameters.limit}}",
+		"offset": "{{parameters.offset}}"
+	},
+	"response": {
+		"iterate": "{{body}}",
+		"output": {
+			"device_id": "{{item.device_id}}",
+			"device_name": "{{item.device_name}}",
+			"model": "{{item.model}}",
+			"serial_number": "{{item.serial_number}}",
+			"platform": "{{item.platform}}",
+			"os_version": "{{item.os_version}}",
+			"last_check_in": "{{item.last_check_in}}",
+			"user": "{{item.user}}",
+			"asset_tag": "{{item.asset_tag}}",
+			"blueprint_id": "{{item.blueprint_id}}",
+			"mdm_enabled": "{{item.mdm_enabled}}",
+			"agent_installed": "{{item.agent_installed}}",
+			"is_missing": "{{item.is_missing}}",
+			"is_removed": "{{item.is_removed}}",
+			"agent_version": "{{item.agent_version}}",
+			"first_enrollment": "{{item.first_enrollment}}",
+			"last_enrollment": "{{item.last_enrollment}}",
+			"blueprint_name": "{{item.blueprint_name}}",
+			"body": "{{item}}"
+		},
+		"limit": "{{parameters.limit}}"
+	}
+}

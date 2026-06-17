@@ -1,0 +1,28 @@
+{
+	"device_id": "9b534c11-a7e3-4f34-bceb-c674941622d7",
+	"device_name": "iPad",
+	"model": "iPad Air (4th generation) Wi-Fi + Cellular",
+	"serial_number": "AAAAAAAAAAAA",
+	"platform": "iPad",
+	"os_version": "14.1",
+	"last_check_in": "",
+	"user": {
+		"email": "TestUser@kandji.io",
+		"name": "Test User",
+		"id": 23,
+		"is_archived": false
+	},
+	"asset_tag": "",
+	"blueprint_id": "bde5a8fa-4722-490a-a50b-e6a287835604",
+	"mdm_enabled": true,
+	"agent_installed": true,
+	"is_missing": false,
+	"is_removed": false,
+	"agent_version": "",
+	"first_enrollment": "2021-04-06T19:45:27.100221Z",
+	"last_enrollment": "2021-04-06T19:45:27.100221Z",
+	"blueprint_name": "Example Blueprint",
+	"body": {
+		"device_id": "9b534c11-a7e3-4f34-bceb-c674941622d7"
+	}
+}

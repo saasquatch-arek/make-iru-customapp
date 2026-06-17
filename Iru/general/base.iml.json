@@ -1,0 +1,21 @@
+{
+	// Default request configuration
+	"baseUrl": "{{connection.apiUrl}}",
+	"headers": {
+		"Authorization": "Bearer {{connection.apiKey}}",
+		"Accept": "application/json"
+	},
+
+	// Default response handling
+	"response": {
+		"error": {
+			"message": "[{{statusCode}}] {{body.message}}"
+		}
+	},
+
+	"log": {
+		"sanitize": [ 
+			"request.headers.authorization"
+		]
+	}
+}

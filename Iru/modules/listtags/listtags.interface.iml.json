@@ -1,0 +1,22 @@
+[
+	{
+		"name": "tag_id",
+		"type": "text",
+		"label": "Tag ID"
+	},
+	{
+		"name": "name",
+		"type": "text",
+		"label": "Name"
+	},
+	{
+		"name": "color",
+		"type": "text",
+		"label": "Color"
+	},
+	{
+		"name": "device_count",
+		"type": "uinteger",
+		"label": "Device Count"
+	}
+]

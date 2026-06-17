@@ -1,0 +1,24 @@
+[
+	{
+		"label": "Devices",
+		"modules": [
+			"searchsn",
+			"getdevice",
+			"listdevicelibraryitems"
+		]
+	},
+	{
+		"label": "Blueprints",
+		"modules": [
+			"listblueprints",
+			"getblueprint",
+			"listtags"
+		]
+	},
+	{
+		"label": "Advanced",
+		"modules": [
+			"makeapicall"
+		]
+	}
+]

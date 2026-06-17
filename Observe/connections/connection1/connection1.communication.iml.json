@@ -1,0 +1,34 @@
+{
+	// Request
+	"url": "https://{{parameters.customerId}}.collect.observeinc.com/v1/http/make/connection-test",
+	"method": "POST",
+	"headers": {
+		"Authorization": "Bearer {{parameters.datastreamToken}}",
+		"Accept": "application/json",
+		"Content-Type": "application/json"
+	},
+	"type": "json",
+	"body": {
+		"source": "make.com",
+		"event_type": "connection_test",
+		"message": "Observe Make app connection test"
+	},
+
+	// Response handling
+	"response": {
+		"metadata": {
+			"type": "text",
+			"value": "{{parameters.customerId}}"
+		},
+		"error": {
+			"message": "[{{statusCode}}] {{body}}"
+		}
+	},
+
+	"log": {
+		"sanitize": [
+			"request.headers.authorization",
+			"connection.makeApiToken"
+		]
+	}
+}

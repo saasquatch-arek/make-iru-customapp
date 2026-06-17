@@ -1,0 +1,97 @@
+[
+	{
+		"name": "device_id",
+		"type": "text",
+		"label": "Device ID"
+	},
+	{
+		"name": "device_name",
+		"type": "text",
+		"label": "Device Name"
+	},
+	{
+		"name": "model",
+		"type": "text",
+		"label": "Model"
+	},
+	{
+		"name": "serial_number",
+		"type": "text",
+		"label": "Serial Number"
+	},
+	{
+		"name": "platform",
+		"type": "text",
+		"label": "Platform"
+	},
+	{
+		"name": "os_version",
+		"type": "text",
+		"label": "OS Version"
+	},
+	{
+		"name": "last_check_in",
+		"type": "date",
+		"label": "Last Check-In"
+	},
+	{
+		"name": "user",
+		"type": "any",
+		"label": "User"
+	},
+	{
+		"name": "asset_tag",
+		"type": "text",
+		"label": "Asset Tag"
+	},
+	{
+		"name": "blueprint_id",
+		"type": "text",
+		"label": "Blueprint ID"
+	},
+	{
+		"name": "mdm_enabled",
+		"type": "boolean",
+		"label": "MDM Enabled"
+	},
+	{
+		"name": "agent_installed",
+		"type": "boolean",
+		"label": "Agent Installed"
+	},
+	{
+		"name": "is_missing",
+		"type": "boolean",
+		"label": "Is Missing"
+	},
+	{
+		"name": "is_removed",
+		"type": "boolean",
+		"label": "Is Removed"
+	},
+	{
+		"name": "agent_version",
+		"type": "text",
+		"label": "Agent Version"
+	},
+	{
+		"name": "first_enrollment",
+		"type": "date",
+		"label": "First Enrollment"
+	},
+	{
+		"name": "last_enrollment",
+		"type": "date",
+		"label": "Last Enrollment"
+	},
+	{
+		"name": "blueprint_name",
+		"type": "text",
+		"label": "Blueprint Name"
+	},
+	{
+		"name": "body",
+		"type": "any",
+		"label": "Body"
+	}
+]

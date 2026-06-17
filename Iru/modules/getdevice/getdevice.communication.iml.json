@@ -1,0 +1,27 @@
+{
+	"url": "/devices/{{parameters.deviceId}}/",
+	"method": "GET",
+	"response": {
+		"output": {
+			"device_id": "{{body.device_id}}",
+			"device_name": "{{body.device_name}}",
+			"model": "{{body.model}}",
+			"serial_number": "{{body.serial_number}}",
+			"platform": "{{body.platform}}",
+			"os_version": "{{body.os_version}}",
+			"last_check_in": "{{body.last_check_in}}",
+			"user": "{{body.user}}",
+			"asset_tag": "{{body.asset_tag}}",
+			"blueprint_id": "{{body.blueprint_id}}",
+			"mdm_enabled": "{{body.mdm_enabled}}",
+			"agent_installed": "{{body.agent_installed}}",
+			"is_missing": "{{body.is_missing}}",
+			"is_removed": "{{body.is_removed}}",
+			"agent_version": "{{body.agent_version}}",
+			"first_enrollment": "{{body.first_enrollment}}",
+			"last_enrollment": "{{body.last_enrollment}}",
+			"blueprint_name": "{{body.blueprint_name}}",
+			"body": "{{body}}"
+		}
+	}
+}

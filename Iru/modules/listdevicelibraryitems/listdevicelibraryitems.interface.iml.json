@@ -1,0 +1,52 @@
+[
+	{
+		"name": "device_id",
+		"type": "text",
+		"label": "Device ID"
+	},
+	{
+		"name": "id",
+		"type": "uinteger",
+		"label": "ID"
+	},
+	{
+		"name": "item_id",
+		"type": "text",
+		"label": "Item ID"
+	},
+	{
+		"name": "name",
+		"type": "text",
+		"label": "Name"
+	},
+	{
+		"name": "type",
+		"type": "text",
+		"label": "Type"
+	},
+	{
+		"name": "status",
+		"type": "text",
+		"label": "Status"
+	},
+	{
+		"name": "reported_at",
+		"type": "date",
+		"label": "Reported At"
+	},
+	{
+		"name": "last_audit_log",
+		"type": "text",
+		"label": "Last Audit Log"
+	},
+	{
+		"name": "log",
+		"type": "text",
+		"label": "Log"
+	},
+	{
+		"name": "body",
+		"type": "any",
+		"label": "Body"
+	}
+]

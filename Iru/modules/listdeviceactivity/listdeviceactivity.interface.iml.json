@@ -1,0 +1,27 @@
+[
+	{
+		"name": "activity_type",
+		"type": "text",
+		"label": "Activity Type"
+	},
+	{
+		"name": "description",
+		"type": "text",
+		"label": "Description"
+	},
+	{
+		"name": "actor",
+		"type": "text",
+		"label": "Actor"
+	},
+	{
+		"name": "created_at",
+		"type": "date",
+		"label": "Created At"
+	},
+	{
+		"name": "status",
+		"type": "text",
+		"label": "Status"
+	}
+]

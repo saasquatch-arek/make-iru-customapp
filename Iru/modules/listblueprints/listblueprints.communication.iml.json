@@ -1,0 +1,21 @@
+{
+	"url": "/blueprints/",
+	"method": "GET",
+	"qs": {
+		"limit": "{{parameters.limit}}",
+		"offset": "{{parameters.offset}}"
+	},
+	"response": {
+		"iterate": "{{body.results}}",
+		"output": {
+			"id": "{{item.id}}",
+			"name": "{{item.name}}",
+			"icon": "{{item.icon}}",
+			"color": "{{item.color}}",
+			"description": "{{item.description}}",
+			"params": "{{item.params}}",
+			"body": "{{item}}"
+		},
+		"limit": "{{parameters.limit}}"
+	}
+}

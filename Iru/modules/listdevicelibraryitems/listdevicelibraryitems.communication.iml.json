@@ -1,0 +1,19 @@
+{
+	"url": "/devices/{{parameters.deviceId}}/library-items/",
+	"method": "GET",
+	"response": {
+		"iterate": "{{body.library_items}}",
+		"output": {
+			"device_id": "{{body.device_id}}",
+			"id": "{{item.id}}",
+			"item_id": "{{item.item_id}}",
+			"name": "{{item.name}}",
+			"status": "{{item.status}}",
+			"reported_at": "{{item.reported_at}}",
+			"type": "{{item.type}}",
+			"last_audit_log": "{{item.last_audit_log}}",
+			"log": "{{item.log}}",
+			"body": "{{item}}"
+		}
+	}
+}

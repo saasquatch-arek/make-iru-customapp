@@ -1,0 +1,15 @@
+{
+	"url": "/users",
+	"method": "GET",
+	"qs": {
+		"email": "{{parameters.email}}",
+		"name": "{{parameters.name}}",
+		"limit": "{{parameters.limit}}",
+		"offset": "{{parameters.offset}}"
+	},
+	"response": {
+		"iterate": "{{body}}",
+		"output": "{{item}}",
+		"limit": "{{parameters.limit}}"
+	}
+}

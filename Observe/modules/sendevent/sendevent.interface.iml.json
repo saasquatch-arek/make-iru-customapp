@@ -1,0 +1,117 @@
+[
+	{
+		"name": "accepted",
+		"type": "boolean",
+		"label": "Accepted"
+	},
+	{
+		"name": "statusCode",
+		"type": "number",
+		"label": "Status Code"
+	},
+	{
+		"name": "timestamp",
+		"type": "date",
+		"label": "Timestamp"
+	},
+	{
+		"name": "source",
+		"type": "text",
+		"label": "Source"
+	},
+	{
+		"name": "event_type",
+		"type": "text",
+		"label": "Event Type"
+	},
+	{
+		"name": "outcome_type",
+		"type": "text",
+		"label": "Outcome Type"
+	},
+	{
+		"name": "severity",
+		"type": "text",
+		"label": "Impact"
+	},
+	{
+		"name": "scenario_name",
+		"type": "text",
+		"label": "Scenario Name"
+	},
+	{
+		"name": "scenario_id",
+		"type": "text",
+		"label": "Scenario ID"
+	},
+	{
+		"name": "scenario_url",
+		"type": "text",
+		"label": "Scenario URL"
+	},
+	{
+		"name": "execution_id",
+		"type": "text",
+		"label": "Execution ID"
+	},
+	{
+		"name": "execution_url",
+		"type": "text",
+		"label": "Execution URL"
+	},
+	{
+		"name": "related_itsm_task_id",
+		"type": "text",
+		"label": "Related ITSM Task ID"
+	},
+	{
+		"name": "related_itsm_task_url",
+		"type": "text",
+		"label": "Related ITSM Task URL"
+	},
+	{
+		"name": "credits_consumed",
+		"type": "number",
+		"label": "Credits Consumed"
+	},
+	{
+		"name": "data_consumed",
+		"type": "number",
+		"label": "Data Consumed"
+	},
+	{
+		"name": "operations_consumed",
+		"type": "number",
+		"label": "Operations Consumed"
+	},
+	{
+		"name": "execution_time",
+		"type": "text",
+		"label": "Execution Time"
+	},
+	{
+		"name": "execution_time_seconds",
+		"type": "number",
+		"label": "Execution Time (Seconds)"
+	},
+	{
+		"name": "system_message",
+		"type": "text",
+		"label": "System Message"
+	},
+	{
+		"name": "module_name",
+		"type": "text",
+		"label": "Module Name"
+	},
+	{
+		"name": "custom_attributes",
+		"type": "collection",
+		"label": "Custom Attributes"
+	},
+	{
+		"name": "details",
+		"type": "any",
+		"label": "Details"
+	}
+]
