@@ -113,6 +113,62 @@ The app does not call the ITSM platform directly. Users can map these values fro
 - Selected custom properties are fetched from `GET /scenarios/{scenarioId}/custom-properties` during execution and sent to Observe.
 - If a selected custom property exists with an empty value, it is still sent as an empty value.
 
+### Send scenario log event
+
+Posts to:
+
+```text
+https://<customer_id>.collect.observeinc.com/v1/http/make/scenario-execution
+```
+
+This module is intended for events returned by Make's scenario log endpoint. Map one scenario log bundle into the module. The module sends a normalized execution event to Observe.
+
+Default normalized body shape:
+
+```json
+{
+  "timestamp": "2026-06-25T16:02:35.006Z",
+  "source": "make.com",
+  "event_type": "scenario_execution",
+  "make_event_type": "EXECUTION_END",
+  "outcome_type": "Success",
+  "severity": "info",
+  "status": 1,
+  "status_label": "Success",
+  "scenario_name": "Monitor Make events",
+  "scenario_id": 123456,
+  "execution_id": "2d722ed24feb44d6a080ebe8b642fd12",
+  "execution_type": "manual",
+  "instant": false,
+  "duration_ms": 459,
+  "execution_time_seconds": 0.459,
+  "centicredits": 100,
+  "credits_consumed": 1,
+  "operations_consumed": 1,
+  "data_consumed_bytes": 1791,
+  "is_replayable": true,
+  "organization_id": 12345,
+  "team_id": 123,
+  "author_id": 123456,
+  "author_name": "Automation User",
+  "replay_of_execution_id": null,
+  "replay_of_execution_name": null,
+  "replay_of_execution_timestamp": null,
+  "make_log_event_id": "1782403355006_2d722ed24feb44d6a080ebe8b642fd12",
+  "details": {}
+}
+```
+
+Derived fields:
+
+- `outcome_type`: derived from Make `statusLabel`.
+- `severity`: `info` for `Success`, `medium` for `Warning`, and `high` for other status labels.
+- `execution_time_seconds`: calculated from Make `duration` milliseconds.
+- `credits_consumed`: calculated from Make `centicredits / 100`.
+- `data_consumed_bytes`: mapped from Make `transfer`.
+
+Do not map Make iterator metadata fields like `__IMTLENGTH__` and `__IMTINDEX__`; they describe the current Make bundle position, not the scenario execution event.
+
 ## Local Structure
 
 ```text
@@ -122,6 +178,7 @@ Observe/
   general/
   modules/
     groups.json
+    sendexecutionlogevent/
     sendevent/
   rpcs/
     listmakecustompropertycheckboxes/

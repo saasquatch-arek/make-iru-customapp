@@ -33,6 +33,21 @@
                     "samples": "modules/sendevent/sendevent.samples.iml.json",
                     "scope": "modules/sendevent/sendevent.scope.iml.json"
                 }
+            },
+            "sendexecutionlogevent": {
+                "label": "Send scenario log event",
+                "description": "Sends a normalized Make scenario execution log event to Observe.",
+                "moduleType": "action",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/sendexecutionlogevent/sendexecutionlogevent.communication.iml.json",
+                    "staticParams": "modules/sendexecutionlogevent/sendexecutionlogevent.static-params.iml.json",
+                    "mappableParams": "modules/sendexecutionlogevent/sendexecutionlogevent.mappable-params.iml.json",
+                    "interface": "modules/sendexecutionlogevent/sendexecutionlogevent.interface.iml.json",
+                    "samples": "modules/sendexecutionlogevent/sendexecutionlogevent.samples.iml.json",
+                    "scope": "modules/sendexecutionlogevent/sendexecutionlogevent.scope.iml.json"
+                }
             }
         },
         "function": {},
@@ -65,6 +80,10 @@
                     {
                         "local": "sendevent",
                         "remote": "sendevent"
+                    },
+                    {
+                        "local": "sendexecutionlogevent",
+                        "remote": "sendexecutionlogevent"
                     }
                 ],
                 "function": [],

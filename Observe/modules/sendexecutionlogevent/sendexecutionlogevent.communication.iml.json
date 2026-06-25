@@ -1,0 +1,103 @@
+[
+	{
+		"condition": "{{lower(ifempty(parameters.statusLabel, '')) == 'success'}}",
+		"response": {
+			"temp": {
+				"outcomeType": "Success",
+				"impact": "info"
+			}
+		}
+	},
+	{
+		"condition": "{{lower(ifempty(parameters.statusLabel, '')) == 'warning'}}",
+		"response": {
+			"temp": {
+				"outcomeType": "Warning",
+				"impact": "medium"
+			}
+		}
+	},
+	{
+		"condition": "{{lower(ifempty(parameters.statusLabel, '')) != 'success' && lower(ifempty(parameters.statusLabel, '')) != 'warning'}}",
+		"response": {
+			"temp": {
+				"outcomeType": "{{capitalize(lower(ifempty(parameters.statusLabel, 'Error')))}}",
+				"impact": "high"
+			}
+		}
+	},
+	{
+		"url": "/http/make/scenario-execution",
+		"method": "POST",
+		"type": "json",
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"body": {
+			"timestamp": "{{parameters.timestamp}}",
+			"source": "make.com",
+			"event_type": "scenario_execution",
+			"make_event_type": "{{parameters.eventType}}",
+			"outcome_type": "{{temp.outcomeType}}",
+			"severity": "{{temp.impact}}",
+			"status": "{{parameters.status}}",
+			"status_label": "{{parameters.statusLabel}}",
+			"scenario_name": "{{parameters.scenarioName}}",
+			"scenario_id": "{{parameters.scenarioId}}",
+			"execution_id": "{{parameters.executionId}}",
+			"execution_type": "{{parameters.executionType}}",
+			"instant": "{{parameters.instant}}",
+			"duration_ms": "{{parameters.duration}}",
+			"execution_time_seconds": "{{ifempty(parameters.duration, 0) / 1000}}",
+			"centicredits": "{{parameters.centicredits}}",
+			"credits_consumed": "{{ifempty(parameters.centicredits, 0) / 100}}",
+			"operations_consumed": "{{parameters.operations}}",
+			"data_consumed_bytes": "{{parameters.transfer}}",
+			"is_replayable": "{{parameters.isReplayable}}",
+			"organization_id": "{{parameters.organizationId}}",
+			"team_id": "{{parameters.teamId}}",
+			"author_id": "{{parameters.authorId}}",
+			"author_name": "{{parameters.authorName}}",
+			"replay_of_execution_id": "{{parameters.replayOfExecutionId}}",
+			"replay_of_execution_name": "{{parameters.replayOfExecutionName}}",
+			"replay_of_execution_timestamp": "{{parameters.replayOfExecutionTimestamp}}",
+			"make_log_event_id": "{{parameters.imtId}}",
+			"details": "{{parameters.details}}"
+		},
+		"response": {
+			"output": {
+				"accepted": true,
+				"statusCode": "{{statusCode}}",
+				"timestamp": "{{parameters.timestamp}}",
+				"source": "make.com",
+				"event_type": "scenario_execution",
+				"make_event_type": "{{parameters.eventType}}",
+				"outcome_type": "{{temp.outcomeType}}",
+				"severity": "{{temp.impact}}",
+				"status": "{{parameters.status}}",
+				"status_label": "{{parameters.statusLabel}}",
+				"scenario_name": "{{parameters.scenarioName}}",
+				"scenario_id": "{{parameters.scenarioId}}",
+				"execution_id": "{{parameters.executionId}}",
+				"execution_type": "{{parameters.executionType}}",
+				"instant": "{{parameters.instant}}",
+				"duration_ms": "{{parameters.duration}}",
+				"execution_time_seconds": "{{ifempty(parameters.duration, 0) / 1000}}",
+				"centicredits": "{{parameters.centicredits}}",
+				"credits_consumed": "{{ifempty(parameters.centicredits, 0) / 100}}",
+				"operations_consumed": "{{parameters.operations}}",
+				"data_consumed_bytes": "{{parameters.transfer}}",
+				"is_replayable": "{{parameters.isReplayable}}",
+				"organization_id": "{{parameters.organizationId}}",
+				"team_id": "{{parameters.teamId}}",
+				"author_id": "{{parameters.authorId}}",
+				"author_name": "{{parameters.authorName}}",
+				"replay_of_execution_id": "{{parameters.replayOfExecutionId}}",
+				"replay_of_execution_name": "{{parameters.replayOfExecutionName}}",
+				"replay_of_execution_timestamp": "{{parameters.replayOfExecutionTimestamp}}",
+				"make_log_event_id": "{{parameters.imtId}}",
+				"details": "{{parameters.details}}"
+			}
+		}
+	}
+]

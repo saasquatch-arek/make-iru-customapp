@@ -1,0 +1,157 @@
+[
+	{
+		"name": "accepted",
+		"type": "boolean",
+		"label": "Accepted"
+	},
+	{
+		"name": "statusCode",
+		"type": "number",
+		"label": "Status Code"
+	},
+	{
+		"name": "timestamp",
+		"type": "date",
+		"label": "Timestamp"
+	},
+	{
+		"name": "source",
+		"type": "text",
+		"label": "Source"
+	},
+	{
+		"name": "event_type",
+		"type": "text",
+		"label": "Event Type"
+	},
+	{
+		"name": "make_event_type",
+		"type": "text",
+		"label": "Make Event Type"
+	},
+	{
+		"name": "outcome_type",
+		"type": "text",
+		"label": "Outcome Type"
+	},
+	{
+		"name": "severity",
+		"type": "text",
+		"label": "Impact"
+	},
+	{
+		"name": "status",
+		"type": "number",
+		"label": "Status"
+	},
+	{
+		"name": "status_label",
+		"type": "text",
+		"label": "Status Label"
+	},
+	{
+		"name": "scenario_name",
+		"type": "text",
+		"label": "Scenario Name"
+	},
+	{
+		"name": "scenario_id",
+		"type": "number",
+		"label": "Scenario ID"
+	},
+	{
+		"name": "execution_id",
+		"type": "text",
+		"label": "Execution ID"
+	},
+	{
+		"name": "execution_type",
+		"type": "text",
+		"label": "Execution Type"
+	},
+	{
+		"name": "instant",
+		"type": "boolean",
+		"label": "Instant"
+	},
+	{
+		"name": "duration_ms",
+		"type": "number",
+		"label": "Duration (Milliseconds)"
+	},
+	{
+		"name": "execution_time_seconds",
+		"type": "number",
+		"label": "Execution Time (Seconds)"
+	},
+	{
+		"name": "centicredits",
+		"type": "number",
+		"label": "Centicredits"
+	},
+	{
+		"name": "credits_consumed",
+		"type": "number",
+		"label": "Credits Consumed"
+	},
+	{
+		"name": "operations_consumed",
+		"type": "number",
+		"label": "Operations Consumed"
+	},
+	{
+		"name": "data_consumed_bytes",
+		"type": "number",
+		"label": "Data Consumed (Bytes)"
+	},
+	{
+		"name": "is_replayable",
+		"type": "boolean",
+		"label": "Is Replayable"
+	},
+	{
+		"name": "organization_id",
+		"type": "number",
+		"label": "Organization ID"
+	},
+	{
+		"name": "team_id",
+		"type": "number",
+		"label": "Team ID"
+	},
+	{
+		"name": "author_id",
+		"type": "number",
+		"label": "Author ID"
+	},
+	{
+		"name": "author_name",
+		"type": "text",
+		"label": "Author Name"
+	},
+	{
+		"name": "replay_of_execution_id",
+		"type": "text",
+		"label": "Replay Of Execution ID"
+	},
+	{
+		"name": "replay_of_execution_name",
+		"type": "text",
+		"label": "Replay Of Execution Name"
+	},
+	{
+		"name": "replay_of_execution_timestamp",
+		"type": "date",
+		"label": "Replay Of Execution Timestamp"
+	},
+	{
+		"name": "make_log_event_id",
+		"type": "text",
+		"label": "Make Log Event ID"
+	},
+	{
+		"name": "details",
+		"type": "any",
+		"label": "Details"
+	}
+]
