@@ -27,6 +27,45 @@
 		}
 	},
 	{
+		"condition": "{{ifempty(connection.makeApiBaseUrl, '') == '' || ifempty(connection.makeApiToken, '') == '' || ifempty(parameters.scenarioId, '') == '' || length(parameters.customPropertiesToSend) == 0}}",
+		"response": {
+			"temp": {
+				"makeCustomProperties": {}
+			}
+		}
+	},
+	{
+		"condition": "{{ifempty(connection.makeApiBaseUrl, '') != '' && ifempty(connection.makeApiToken, '') != '' && ifempty(parameters.scenarioId, '') != '' && length(parameters.customPropertiesToSend) > 0}}",
+		"url": "{{connection.makeApiBaseUrl}}/scenarios/{{parameters.scenarioId}}/custom-properties",
+		"method": "GET",
+		"headers": {
+			"Authorization": "Token {{connection.makeApiToken}}",
+			"Accept": "application/json"
+		},
+		"response": {
+			"error": {
+				"404": {
+					"message": "Could not load Make scenario custom properties. Check Make API Base URL and that the scenario has custom properties data."
+				},
+				"401": {
+					"message": "Could not load Make scenario custom properties. Check the Make API token."
+				},
+				"403": {
+					"message": "Could not load Make scenario custom properties. The Make API token needs scenarios:read for this scenario."
+				},
+				"message": "Could not load Make scenario custom properties. [{{statusCode}}] {{body}}"
+			},
+			"temp": {
+				"makeCustomProperties": "{{pick(ifempty(body.customProperties, {}), parameters.customPropertiesToSend)}}"
+			}
+		},
+		"log": {
+			"sanitize": [
+				"request.headers.authorization"
+			]
+		}
+	},
+	{
 		"url": "/http/make/scenario-execution",
 		"method": "POST",
 		"type": "json",
@@ -43,6 +82,7 @@
 			"status": "{{parameters.status}}",
 			"status_label": "{{parameters.statusLabel}}",
 			"scenario_name": "{{parameters.scenarioName}}",
+			"process_label": "{{parameters.processLabel}}",
 			"scenario_id": "{{parameters.scenarioId}}",
 			"execution_id": "{{parameters.executionId}}",
 			"execution_type": "{{parameters.executionType}}",
@@ -62,6 +102,7 @@
 			"replay_of_execution_name": "{{parameters.replayOfExecutionName}}",
 			"replay_of_execution_timestamp": "{{parameters.replayOfExecutionTimestamp}}",
 			"make_log_event_id": "{{parameters.imtId}}",
+			"custom_attributes": "{{temp.makeCustomProperties}}",
 			"details": "{{parameters.details}}"
 		},
 		"response": {
@@ -77,6 +118,7 @@
 				"status": "{{parameters.status}}",
 				"status_label": "{{parameters.statusLabel}}",
 				"scenario_name": "{{parameters.scenarioName}}",
+				"process_label": "{{parameters.processLabel}}",
 				"scenario_id": "{{parameters.scenarioId}}",
 				"execution_id": "{{parameters.executionId}}",
 				"execution_type": "{{parameters.executionType}}",
@@ -96,6 +138,7 @@
 				"replay_of_execution_name": "{{parameters.replayOfExecutionName}}",
 				"replay_of_execution_timestamp": "{{parameters.replayOfExecutionTimestamp}}",
 				"make_log_event_id": "{{parameters.imtId}}",
+				"custom_attributes": "{{temp.makeCustomProperties}}",
 				"details": "{{parameters.details}}"
 			}
 		}

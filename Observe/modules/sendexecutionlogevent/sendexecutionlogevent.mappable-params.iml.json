@@ -39,10 +39,26 @@
 		"help": "Map scenarioName from the Make scenario log bundle."
 	},
 	{
+		"name": "processLabel",
+		"type": "text",
+		"label": "Process Label",
+		"help": "Optional custom label for grouping related scenario execution events, for example invoice_sync or device_inventory."
+	},
+	{
 		"name": "scenarioId",
 		"type": "number",
 		"label": "Scenario ID",
 		"help": "Map scenarioId from the Make scenario log bundle."
+	},
+	{
+		"name": "customPropertiesToSend",
+		"type": "select",
+		"label": "Custom Properties to Send",
+		"multiple": true,
+		"default": [],
+		"options": "rpc://listmakecustompropertycheckboxes",
+		"mappable": false,
+		"help": "Optional. Select Make scenario custom properties to include in the Observe payload. If nothing is selected, no custom properties are sent."
 	},
 	{
 		"name": "executionId",

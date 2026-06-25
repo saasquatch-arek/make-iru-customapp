@@ -27,7 +27,14 @@ https://<customer_id>.collect.observeinc.com/v1/http/make/connection-test
 
 ## Module
 
+The app has two event-sending modules:
+
+- `Send scenario event`: use directly inside a scenario branch, usually as the last module in a success path, warning path, or error handler. This is for explicit, branch-level outcome reporting.
+- `Send scenario log event`: use in a monitoring scenario after fetching Make scenario logs. This is for automatically forwarding execution-history events from Make's scenario log endpoint.
+
 ### Send scenario event
+
+Dedicated to explicit scenario outcome reporting from inside a running Make scenario. Use this when the scenario itself decides what should be reported to Observe, such as a successful business process, a handled warning, or an error-handler branch.
 
 Posts to:
 
@@ -115,6 +122,8 @@ The app does not call the ITSM platform directly. Users can map these values fro
 
 ### Send scenario log event
 
+Dedicated to scenario execution history gathered from Make's scenario log endpoint. Use this when a separate monitoring scenario reads Make execution logs and forwards each log bundle to Observe as a normalized execution event.
+
 Posts to:
 
 ```text
@@ -136,6 +145,7 @@ Default normalized body shape:
   "status": 1,
   "status_label": "Success",
   "scenario_name": "Monitor Make events",
+  "process_label": "scenario_monitoring",
   "scenario_id": 123456,
   "execution_id": "2d722ed24feb44d6a080ebe8b642fd12",
   "execution_type": "manual",
@@ -155,6 +165,9 @@ Default normalized body shape:
   "replay_of_execution_name": null,
   "replay_of_execution_timestamp": null,
   "make_log_event_id": "1782403355006_2d722ed24feb44d6a080ebe8b642fd12",
+  "custom_attributes": {
+    "environment": "production"
+  },
   "details": {}
 }
 ```
@@ -166,6 +179,15 @@ Derived fields:
 - `execution_time_seconds`: calculated from Make `duration` milliseconds.
 - `credits_consumed`: calculated from Make `centicredits / 100`.
 - `data_consumed_bytes`: mapped from Make `transfer`.
+
+Status fields:
+
+- `status_label`: used to derive `outcome_type` and `severity`.
+- `status`: raw Make numeric status code, kept for filtering or troubleshooting when needed.
+
+`process_label` is optional and can be mapped or entered manually to group related execution events, for example `invoice_sync`, `device_inventory`, or `scenario_monitoring`.
+
+`custom_attributes` works the same way as in the `Send scenario event` module. If Make API settings are configured in the connection and custom properties are selected in the module, the app fetches scenario custom-property values using the mapped scenario log `scenarioId`.
 
 Do not map Make iterator metadata fields like `__IMTLENGTH__` and `__IMTINDEX__`; they describe the current Make bundle position, not the scenario execution event.
 

@@ -21,7 +21,7 @@
         "module": {
             "sendevent": {
                 "label": "Send scenario event",
-                "description": "Sends a structured Make scenario outcome event to Observe over the HTTP ingestion endpoint.",
+                "description": "Use inside scenario branches to report a success, warning, error, or critical outcome to Observe.",
                 "moduleType": "action",
                 "connection": "connection1",
                 "altConnection": null,
@@ -36,7 +36,7 @@
             },
             "sendexecutionlogevent": {
                 "label": "Send scenario log event",
-                "description": "Sends a normalized Make scenario execution log event to Observe.",
+                "description": "Use with Make scenario log bundles to send normalized execution history events to Observe.",
                 "moduleType": "action",
                 "connection": "connection1",
                 "altConnection": null,

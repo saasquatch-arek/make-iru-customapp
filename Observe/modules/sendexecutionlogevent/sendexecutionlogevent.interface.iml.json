@@ -55,6 +55,11 @@
 		"label": "Scenario Name"
 	},
 	{
+		"name": "process_label",
+		"type": "text",
+		"label": "Process Label"
+	},
+	{
 		"name": "scenario_id",
 		"type": "number",
 		"label": "Scenario ID"
@@ -148,6 +153,11 @@
 		"name": "make_log_event_id",
 		"type": "text",
 		"label": "Make Log Event ID"
+	},
+	{
+		"name": "custom_attributes",
+		"type": "collection",
+		"label": "Custom Attributes"
 	},
 	{
 		"name": "details",
