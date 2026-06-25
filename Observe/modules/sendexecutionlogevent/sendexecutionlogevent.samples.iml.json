@@ -10,7 +10,6 @@
 	"status": 1,
 	"status_label": "Success",
 	"scenario_name": "Monitor Make events",
-	"process_label": "scenario_monitoring",
 	"scenario_id": 123456,
 	"execution_id": "2d722ed24feb44d6a080ebe8b642fd12",
 	"execution_type": "manual",

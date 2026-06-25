@@ -39,12 +39,6 @@
 		"help": "Map scenarioName from the Make scenario log bundle."
 	},
 	{
-		"name": "processLabel",
-		"type": "text",
-		"label": "Process Label",
-		"help": "Optional custom label for grouping related scenario execution events, for example invoice_sync or device_inventory."
-	},
-	{
 		"name": "scenarioId",
 		"type": "number",
 		"label": "Scenario ID",

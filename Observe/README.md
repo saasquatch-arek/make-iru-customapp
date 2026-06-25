@@ -145,7 +145,6 @@ Default normalized body shape:
   "status": 1,
   "status_label": "Success",
   "scenario_name": "Monitor Make events",
-  "process_label": "scenario_monitoring",
   "scenario_id": 123456,
   "execution_id": "2d722ed24feb44d6a080ebe8b642fd12",
   "execution_type": "manual",
@@ -185,9 +184,7 @@ Status fields:
 - `status_label`: used to derive `outcome_type` and `severity`.
 - `status`: raw Make numeric status code, kept for filtering or troubleshooting when needed.
 
-`process_label` is optional and can be mapped or entered manually to group related execution events, for example `invoice_sync`, `device_inventory`, or `scenario_monitoring`.
-
-`custom_attributes` works the same way as in the `Send scenario event` module. If Make API settings are configured in the connection and custom properties are selected in the module, the app fetches scenario custom-property values using the mapped scenario log `scenarioId`.
+`custom_attributes` works the same way as in the `Send scenario event` module. If Make API settings are configured in the connection and custom properties are selected in the module, the app fetches scenario custom-property values using the mapped scenario log `scenarioId`. Use custom properties for process or ownership labels such as `process_label`, `business_owner`, or `environment`.
 
 Do not map Make iterator metadata fields like `__IMTLENGTH__` and `__IMTINDEX__`; they describe the current Make bundle position, not the scenario execution event.
 

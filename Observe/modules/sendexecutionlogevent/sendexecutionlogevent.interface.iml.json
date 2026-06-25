@@ -55,11 +55,6 @@
 		"label": "Scenario Name"
 	},
 	{
-		"name": "process_label",
-		"type": "text",
-		"label": "Process Label"
-	},
-	{
 		"name": "scenario_id",
 		"type": "number",
 		"label": "Scenario ID"
