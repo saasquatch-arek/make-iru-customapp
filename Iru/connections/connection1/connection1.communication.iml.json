@@ -16,7 +16,7 @@
 			"value": "{{parameters.apiUrl}}"
 		},
 		"error": {                                        // Error handling
-			"message": "[{{statusCode}}] {{body.message}}"
+			"message": "[{{statusCode}}] {{ifempty(body.message, ifempty(body.detail, ifempty(body.error, 'Iru API request failed.')))}}"
 		}
 	},
 

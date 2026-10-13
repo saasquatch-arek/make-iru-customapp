@@ -44,7 +44,23 @@
 	{
 		"name": "osVersion",
 		"type": "text",
-		"label": "OS Version"
+		"label": "OS Version",
+		"help": "Iru's server-side filter: returns versions containing this single string. Use OS Version Contains Any for several strings. All supplied filters are combined."
+	},
+	{
+		"name": "osVersionBelow",
+		"type": "text",
+		"label": "OS Version Below",
+		"validate": {
+			"pattern": "^[0-9]{1,9}(\\.[0-9]{1,9})*$"
+		},
+		"help": "Returns devices with a numeric OS version strictly below this version, for example 26.7. Compares numeric components, treating missing components as zero. Applied in Make after fetching devices; nonnumeric versions such as 24H2 are excluded. Numeric components can contain up to nine digits."
+	},
+	{
+		"name": "osVersionContainsAny",
+		"type": "text",
+		"label": "OS Version Contains Any",
+		"help": "Comma-separated literal strings, for example 26.6., 26.7. Returns devices whose OS version contains at least one string. Applied in Make after fetching devices. If OS Version Below is set, both filters must match."
 	},
 	{
 		"name": "user",
@@ -58,8 +74,9 @@
 	},
 	{
 		"name": "userId",
-		"type": "uinteger",
-		"label": "User ID"
+		"type": "text",
+		"label": "User ID",
+		"help": "The user's Iru UUID."
 	},
 	{
 		"name": "userName",
@@ -75,6 +92,18 @@
 		"name": "limit",
 		"type": "uinteger",
 		"label": "Limit",
-		"default": 10
+		"default": 10,
+		"required": true,
+		"validate": {
+			"min": 1
+		},
+		"help": "Maximum number of devices to return across all pages."
+	},
+	{
+		"name": "offset",
+		"type": "uinteger",
+		"label": "Offset",
+		"default": 0,
+		"help": "Number of API records to skip before applying the additional OS version filters."
 	}
 ]

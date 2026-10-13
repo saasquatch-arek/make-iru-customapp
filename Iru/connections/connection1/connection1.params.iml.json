@@ -8,7 +8,7 @@
     },
     {
         "name": "apiKey",
-        "type": "text",
+        "type": "password",
         "label": "API Key",
         "required": true
     }

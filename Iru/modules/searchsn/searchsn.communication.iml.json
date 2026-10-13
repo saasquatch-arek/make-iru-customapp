@@ -16,11 +16,14 @@
 		"user_id": "{{parameters.userId}}",
 		"user_name": "{{parameters.userName}}",
 		"mac_address": "{{parameters.macAddress}}",
-		"limit": "{{parameters.limit}}",
-		"offset": "{{parameters.offset}}"
+		"limit": "{{if(ifempty(parameters.osVersionBelow, '') != '' || ifempty(parameters.osVersionContainsAny, '') != '', 300, min(parameters.limit, 300))}}",
+		"offset": "{{ifempty(parameters.offset, 0)}}"
 	},
 	"response": {
-		"iterate": "{{body}}",
+		"iterate": {
+			"container": "{{body}}",
+			"condition": "{{if(trim(ifempty(parameters.osVersionBelow, '')) == '', true, if(replace(trim(ifempty(parameters.osVersionBelow, '')), '/^[0-9]{1,9}(\\.[0-9]{1,9})*$/', '') == '' && trim(ifempty(item.os_version, '')) != '' && replace(trim(ifempty(item.os_version, '')), '/^[0-9]{1,9}(\\.[0-9]{1,9})*(\\s+\\([a-z]+\\))?$/i', '') == '', replace('000000000' + replace(replace(replace(replace(trim(ifempty(item.os_version, '')), '/\\s+\\([a-z]+\\)$/i', ''), '/(^|\\.)0+(?=[0-9])/g', '$1'), '/(\\.0)+$/', ''), '.', '.000000000'), '/[0-9]*([0-9]{9})/g', '$1') < temp.osVersionBelowKey, false)) && (length(split(ifempty(parameters.osVersionContainsAny, ''), ',')) == 0 || replace(trim(ifempty(item.os_version, '')), temp.osVersionContainsAnyPattern, '') != trim(ifempty(item.os_version, '')))}}"
+		},
 		"output": {
 			"device_id": "{{item.device_id}}",
 			"device_name": "{{item.device_name}}",
@@ -42,6 +45,16 @@
 			"blueprint_name": "{{item.blueprint_name}}",
 			"body": "{{item}}"
 		},
-		"limit": "{{parameters.limit}}"
+		"limit": "{{parameters.limit}}",
+		"temp": {
+			"osVersionBelowKey": "{{replace('000000000' + replace(replace(replace(trim(ifempty(parameters.osVersionBelow, '')), '/(^|\\.)0+(?=[0-9])/g', '$1'), '/(\\.0)+$/', ''), '.', '.000000000'), '/[0-9]*([0-9]{9})/g', '$1')}}",
+			"osVersionContainsAnyPattern": "{{'/(?:' + join(split(replace(ifempty(parameters.osVersionContainsAny, ''), '/[.*+?^\\u0024{}()|[\\]\\\\]/g', '\\$&'), ','), '|') + ')/'}}"
+		}
+	},
+	"pagination": {
+		"condition": "{{length(body) > 0}}",
+		"qs": {
+			"offset": "{{ifempty(parameters.offset, 0) + (pagination.page - 1) * if(ifempty(parameters.osVersionBelow, '') != '' || ifempty(parameters.osVersionContainsAny, '') != '', 300, min(parameters.limit, 300))}}"
+		}
 	}
 }

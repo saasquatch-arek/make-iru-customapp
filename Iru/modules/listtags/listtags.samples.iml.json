@@ -1,6 +1,9 @@
 {
-	"tag_id": "tag_11",
-	"name": "VIP",
-	"color": "#0057B8",
-	"device_count": 12
+    "id": "71dd53f1-104e-41a2-82ca-43a375b7f63d",
+    "tag_id": "71dd53f1-104e-41a2-82ca-43a375b7f63d",
+    "name": "VIP",
+    "body": {
+        "id": "71dd53f1-104e-41a2-82ca-43a375b7f63d",
+        "name": "VIP"
+    }
 }

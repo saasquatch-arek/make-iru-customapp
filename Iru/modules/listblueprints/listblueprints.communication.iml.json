@@ -3,7 +3,7 @@
 	"method": "GET",
 	"qs": {
 		"limit": "{{parameters.limit}}",
-		"offset": "{{parameters.offset}}"
+		"offset": "{{ifempty(parameters.offset, 0)}}"
 	},
 	"response": {
 		"iterate": "{{body.results}}",
@@ -17,5 +17,10 @@
 			"body": "{{item}}"
 		},
 		"limit": "{{parameters.limit}}"
+	},
+	"pagination": {
+		"mergeWithParent": false,
+		"condition": "{{body.next}}",
+		"url": "{{body.next}}"
 	}
 }

@@ -1,5 +1,10 @@
 [
 	{
+		"name": "id",
+		"type": "text",
+		"label": "ID"
+	},
+	{
 		"name": "tag_id",
 		"type": "text",
 		"label": "Tag ID"
@@ -12,11 +17,16 @@
 	{
 		"name": "color",
 		"type": "text",
-		"label": "Color"
+		"label": "Color (if available)"
 	},
 	{
 		"name": "device_count",
 		"type": "uinteger",
-		"label": "Device Count"
+		"label": "Device Count (if available)"
+	},
+	{
+		"name": "body",
+		"type": "any",
+		"label": "Body"
 	}
 ]

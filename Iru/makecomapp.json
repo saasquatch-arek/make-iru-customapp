@@ -21,7 +21,7 @@
         "module": {
             "searchsn": {
                 "label": "List devices",
-                "description": "Lists devices with documented device, blueprint, platform, and user-related filters.",
+                "description": "Lists devices with device, blueprint, platform, user, and OS version filters.",
                 "moduleType": "search",
                 "connection": "connection1",
                 "altConnection": null,
@@ -127,7 +127,8 @@
         },
         "function": {},
         "rpc": {},
-        "webhook": {}
+        "webhook": {},
+        "endpoint": {}
     },
     "origins": [
         {
@@ -175,7 +176,8 @@
                 ],
                 "function": [],
                 "rpc": [],
-                "webhook": []
+                "webhook": [],
+                "endpoint": []
             }
         }
     ]
