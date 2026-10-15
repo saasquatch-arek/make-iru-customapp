@@ -1,7 +1,7 @@
 [
     {
         "name": "apiUrl",
-        "type": "text",
+        "type": "url",
         "label": "Tenant API URL",
         "required": true,
         "help": "Paste the full tenant-specific API URL shown in Iru, for example https://tenant.api.kandji.io/api/v1, https://tenant.api.eu.kandji.io/api/v1, or https://tenant.api.iru.com/api/v1."
@@ -10,6 +10,7 @@
         "name": "apiKey",
         "type": "password",
         "label": "API Key",
+        "editable": true,
         "required": true
     }
 ]

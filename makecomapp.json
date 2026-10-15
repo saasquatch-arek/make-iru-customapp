@@ -20,8 +20,8 @@
         },
         "module": {
             "searchsn": {
-                "label": "List devices",
-                "description": "Lists devices with device, blueprint, platform, user, and OS version filters.",
+                "label": "Search devices",
+                "description": "Searches devices by device, blueprint, platform, user, and OS version filters.",
                 "moduleType": "search",
                 "connection": "connection1",
                 "altConnection": null,
@@ -95,8 +95,8 @@
                 }
             },
             "listtags": {
-                "label": "List tags",
-                "description": "Lists tags with optional search filtering.",
+                "label": "Search tags",
+                "description": "Searches tags by name.",
                 "moduleType": "search",
                 "connection": "connection1",
                 "altConnection": null,
@@ -130,5 +130,55 @@
         "webhook": {},
         "endpoint": {}
     },
-    "origins": []
+    "origins": [
+        {
+            "label": "Personal",
+            "baseUrl": "https://eu2.make.com/api",
+            "appId": "iru-d62j6g",
+            "appVersion": 1,
+            "apikeyFile": ".secrets/apikey",
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "iru-d62j6g"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "searchsn",
+                        "remote": "searchsn"
+                    },
+                    {
+                        "local": "getdevice",
+                        "remote": "getdevice"
+                    },
+                    {
+                        "local": "listblueprints",
+                        "remote": "listblueprints"
+                    },
+                    {
+                        "local": "getblueprint",
+                        "remote": "getblueprint"
+                    },
+                    {
+                        "local": "listdevicelibraryitems",
+                        "remote": "listdevicelibraryitems"
+                    },
+                    {
+                        "local": "listtags",
+                        "remote": "listtags"
+                    },
+                    {
+                        "local": "makeapicall",
+                        "remote": "makeapicall"
+                    }
+                ],
+                "function": [],
+                "rpc": [],
+                "webhook": [],
+                "endpoint": []
+            }
+        }
+    ]
 }

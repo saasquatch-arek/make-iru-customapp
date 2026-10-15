@@ -93,7 +93,6 @@
 		"type": "uinteger",
 		"label": "Limit",
 		"default": 10,
-		"required": true,
 		"validate": {
 			"min": 1
 		},
