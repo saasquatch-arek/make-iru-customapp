@@ -130,55 +130,5 @@
         "webhook": {},
         "endpoint": {}
     },
-    "origins": [
-        {
-            "label": "Origin",
-            "baseUrl": "https://us1.make.celonis.com/api",
-            "appId": "iru-app-fwosfx",
-            "appVersion": 1,
-            "apikeyFile": "../.secrets/apikey",
-            "idMapping": {
-                "connection": [
-                    {
-                        "local": "connection1",
-                        "remote": "iru-app-fwosfx"
-                    }
-                ],
-                "module": [
-                    {
-                        "local": "searchsn",
-                        "remote": "searchsn"
-                    },
-                    {
-                        "local": "getdevice",
-                        "remote": "getdevice"
-                    },
-                    {
-                        "local": "makeapicall",
-                        "remote": "makeapicall"
-                    },
-                    {
-                        "local": "listblueprints",
-                        "remote": "listblueprints"
-                    },
-                    {
-                        "local": "getblueprint",
-                        "remote": "getblueprint"
-                    },
-                    {
-                        "local": "listdevicelibraryitems",
-                        "remote": "listdevicelibraryitems"
-                    },
-                    {
-                        "local": "listtags",
-                        "remote": "listtags"
-                    }
-                ],
-                "function": [],
-                "rpc": [],
-                "webhook": [],
-                "endpoint": []
-            }
-        }
-    ]
+    "origins": []
 }

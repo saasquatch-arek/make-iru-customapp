@@ -101,26 +101,43 @@ Iru/
   README.md
 ```
 
-## Make Origin Mapping
+## Make deployment setup
 
-`makecomapp.json` points to:
+The local app is detached from the previous Make organization: `makecomapp.json` has an empty `origins` array.
 
-- app id: `iru-app-fwosfx`
-- Make zone: `us1.make.celonis.com`
+To connect your own Make account:
 
-## Notes
+1. Create an empty custom app in your own Make account and record its app ID and zone.
+2. Create a new Make API token with the permissions required to manage that app. Save the token locally in `.secrets/make-personal-apikey`; do not reuse the previous organization's token.
+3. Add an origin to `makecomapp.json`, replacing the zone and app ID below:
 
-- `.secrets/apikey` is used for the Make app origin, not for the Iru tenant API token used when creating a connection in scenarios.
-- Only the modules referenced from `makecomapp.json` are included in local deployment. Excluding a folder from the manifest does not mean the remote module has been removed.
+```json
+"origins": [
+    {
+        "label": "Personal",
+        "baseUrl": "https://YOUR-ZONE.make.com/api",
+        "appId": "YOUR-APP-ID",
+        "appVersion": 1,
+        "apikeyFile": ".secrets/make-personal-apikey"
+    }
+]
+```
 
-## Deployed state checked on 2026-10-07
+4. In VS Code with Make Apps Editor, right-click `makecomapp.json`, select **Deploy to Make (beta)**, and select the Personal origin. Map the local components to newly created components when prompted.
+5. Create an Iru connection in Make using your tenant API URL and Iru token, then test the modules in a scenario.
 
-The configured Make API reports app version `1.0.0` and twelve modules. The seven modules in the local manifest were present, along with five older modules: `listadedevices`, `listadeintegrations`, `listdeviceactivity`, `listdeviceapps`, and `listusers`. These five are grouped under `Other` remotely and are not archived. The deployed `listadedevices` communication also differs from its local file.
+The `.secrets` directory, legacy `secrets/` directory, and `.env` files are ignored by Git. The Make deployment token is separate from the Iru API token used by scenario connections. Existing local credential files are not used by the new origin above.
+
+Only modules referenced in the manifest are included in deployment. Removing the old origin does not change the old remote app or its scenarios.
+
+## Historical state of the previous origin, checked on 2026-10-07
+
+The previous origin’s Make API reported app version `1.0.0` and twelve modules. The seven modules in the local manifest were present, along with five older modules: `listadedevices`, `listadeintegrations`, `listdeviceactivity`, `listdeviceapps`, and `listusers`. These five are grouped under `Other` remotely and are not archived. The deployed `listadedevices` communication also differs from its local file.
 
 The app metadata reports `public: true` and `approved: false`; each module reports `public: false`. Those flags alone do not establish which existing scenarios can use the app. Deployment and scenario execution were not performed as part of this check.
 
 ## Next Steps
 
-1. Deploy the reviewed local fixes for the seven manifest modules and the connection.
+1. Configure your personal Make origin as described above, then deploy the seven manifest modules and the connection.
 2. Test device listing with a UUID user filter, a limit above 300, both additional OS version filters (including a page with no matches), and multi-page blueprint and tag listing in Make.
 3. Reconcile the five older remote modules separately, preserving any scenario dependencies and the remote ADE changes.
